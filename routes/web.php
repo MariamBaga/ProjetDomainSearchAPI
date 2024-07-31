@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DomaineController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/domains', [DomaineController::class, 'index']);
+
 
 Route::middleware([
     'auth:sanctum',
