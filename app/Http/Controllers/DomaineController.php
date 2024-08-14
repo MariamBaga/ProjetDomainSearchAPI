@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Domain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -12,10 +11,15 @@ class DomaineController extends Controller
     {
         try {
             // URL de l'API externe
-            $apiUrl = 'http://api.mane.com/api/domains'; // Remplace cette URL par celle de l'API
+            $apiUrl = 'https://api.dev.name.com/v4/domains:search'; // URL correcte de l'API
+
+            // Payload JSON pour la requête
+            $payload = json_encode(['keyword' => 'example']);
 
             // Appel à l'API pour obtenir les domaines
-            $response = Http::get($apiUrl);
+            $response = Http::withBody($payload, 'application/json')
+                            ->withBasicAuth('MariamBaga-test', 'eec8d7c3e23ec3156a2cbe3f0cc4139bff2365d0') // Remplace par les bons identifiants
+                            ->post($apiUrl);
 
             if ($response->successful()) {
                 $domains = $response->json();
