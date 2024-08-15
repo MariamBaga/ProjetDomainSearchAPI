@@ -7,9 +7,15 @@ use Illuminate\Support\Facades\Http;
 
 class DomaineController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         try {
+
+
+            // Récupération du keyword depuis le formulaire
+            $keyword = $request->input('domain_name', 'example'); // 'example' est la valeur par défaut si rien n'est envoyé
+            $extension = $request->input('domain_extension', 'com'); // 'com' par défaut si rien n'est envoyé
+
             // URL de l'API externe
             $apiUrl = 'https://api.dev.name.com/v4/domains:search'; // URL correcte de l'API
 
