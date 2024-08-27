@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DomaineController;
 
 // Groupe de routes pour les opérations sur les domaines
-Route::middleware('auth:sanctum')->prefix('domains')->group(function () {
+Route::middleware('auth:sanctum')->group(function () {
 
     // Route pour rechercher des domaines
     Route::get('/search', [DomaineController::class, 'index']);
@@ -18,6 +18,6 @@ Route::middleware('auth:sanctum')->prefix('domains')->group(function () {
     // Route pour transférer un domaine
     Route::post('/transfer', [DomaineController::class, 'transfer']);
 });
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// })->middleware('auth:sanctum');

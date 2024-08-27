@@ -1,0 +1,66 @@
+register domain
+
+{
+	"domain": {
+		"domainName": "object.cricket",
+		"nameservers": [
+			"ns1vwx.name.com",
+			"ns2btz.name.com",
+			"ns3gnv.name.com",
+			"ns4fpy.name.com"
+		],
+		"contacts": {
+			"registrant": {
+				"firstName": "Bagayoko",
+				"lastName": "Mariam",
+				"address1": "Avenue de l'Indépendance",
+				"city": "Bamako",
+				"state": "Bamako District",
+				"zip": "0000",
+				"country": "ML",
+				"phone": "+223.77105526",
+				"email": "bagayokom2003@gmail.com"
+			},
+			"admin": {
+				"firstName": "Bagayoko",
+				"lastName": "Mariam",
+				"address1": "Avenue de l'Indépendance",
+				"city": "Bamako",
+				"state": "Bamako District",
+				"zip": "0000",
+				"country": "ML",
+				"phone": "+223.77105526",
+				"email": "bagayokom2003@gmail.com"
+			},
+			"tech": {
+				"firstName": "Bagayoko",
+				"lastName": "Mariam",
+				"address1": "Avenue de l'Indépendance",
+				"city": "Bamako",
+				"state": "Bamako District",
+				"zip": "0000",
+				"country": "ML",
+				"phone": "+223.77105526",
+				"email": "bagayokom2003@gmail.com"
+			},
+			"billing": {
+				"firstName": "Bagayoko",
+				"lastName": "Mariam",
+				"address1": "Avenue de l'Indépendance",
+				"city": "Bamako",
+				"state": "Bamako District",
+				"zip": "0000",
+				"country": "ML",
+				"phone": "+223.77105526",
+				"email": "bagayokom2003@gmail.com"
+			}
+		},
+		"locked": true,
+		"autorenewEnabled": true,
+		"expireDate": "2025-08-27T12:13:42Z",
+		"createDate": "2024-08-27T12:13:42Z",
+		"renewalPrice": 34.99
+	},
+	"order": 715307,
+	"totalPaid": 622.5
+}

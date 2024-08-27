@@ -22,9 +22,7 @@ class DomaineController extends Controller
             $payload = json_encode(['keyword' => $keyword]);
 
             // Appel à l'API pour obtenir les domaines
-            $response = Http::withBody($payload, 'application/json')
-                            ->withBasicAuth('MariamBaga-test', 'eec8d7c3e23ec3156a2cbe3f0cc4139bff2365d0')
-                            ->post($apiUrl);
+            $response = Http::withBody($payload, 'application/json')->withBasicAuth('MariamBaga-test', 'eec8d7c3e23ec3156a2cbe3f0cc4139bff2365d0')->post($apiUrl);
 
             if ($response->successful()) {
                 $domains = $response->json();
@@ -55,7 +53,7 @@ class DomaineController extends Controller
 
             // Appel API pour enregistrer le domaine
             $response = Http::withBody($payload, 'application/json')
-                            ->withBasicAuth('username', 'token') // Remplacez 'username' et 'token' par vos véritables identifiants
+                            ->withBasicAuth('MariamBaga-test', 'eec8d7c3e23ec3156a2cbe3f0cc4139bff2365d0') // Remplacez 'username' et 'token' par vos véritables identifiants
                             ->post($apiUrl);
 
             if ($response->successful()) {
@@ -85,7 +83,7 @@ class DomaineController extends Controller
 
             // Appel API pour renouveler le domaine
             $response = Http::withBody($payload, 'application/json')
-                            ->withBasicAuth('username', 'token') // Remplacez 'username' et 'token' par vos véritables identifiants
+                            ->withBasicAuth('MariamBaga-test', 'eec8d7c3e23ec3156a2cbe3f0cc4139bff2365d0') // Remplacez 'username' et 'token' par vos véritables identifiants
                             ->post($apiUrl);
 
             if ($response->successful()) {
@@ -118,7 +116,7 @@ class DomaineController extends Controller
 
             // Appel API pour créer le transfert
             $response = Http::withBody($payload, 'application/json')
-                            ->withBasicAuth('username', 'token') // Remplacez 'username' et 'token' par vos véritables identifiants
+                            ->withBasicAuth('MariamBaga-test', 'eec8d7c3e23ec3156a2cbe3f0cc4139bff2365d0') // Remplacez 'username' et 'token' par vos véritables identifiants
                             ->post($apiUrl);
 
             if ($response->successful()) {
@@ -131,47 +129,4 @@ class DomaineController extends Controller
         }
     }
 
-    // Méthode pour lister les transferts
-    public function listTransfers()
-    {
-        try {
-            // URL pour récupérer la liste des transferts
-            $apiUrl = 'https://api.dev.name.com/v4/transfers';
-
-            // Appel API pour lister les transferts
-            $response = Http::withBasicAuth('username', 'token') // Remplacez 'username' et 'token' par vos véritables identifiants
-                            ->get($apiUrl);
-
-            if ($response->successful()) {
-                return response()->json($response->json());
-            } else {
-                return response()->json(['error' => 'Unable to retrieve transfer list'], $response->status());
-            }
-        } catch (\Exception $e) {
-            return response()->json(['error' => 'Exception: ' . $e->getMessage()], 500);
-        }
-    }
-
-    // Méthode pour annuler un transfert
-    public function cancelTransfer(Request $request)
-    {
-        $transferId = $request->input('transfer_id'); // ID du transfert à annuler
-
-        try {
-            // URL pour annuler le transfert
-            $apiUrl = "https://api.dev.name.com/v4/transfers/{$transferId}:cancel";
-
-            // Appel API pour annuler le transfert
-            $response = Http::withBasicAuth('username', 'token') // Remplacez 'username' et 'token' par vos véritables identifiants
-                            ->post($apiUrl);
-
-            if ($response->successful()) {
-                return response()->json($response->json());
-            } else {
-                return response()->json(['error' => 'Unable to cancel transfer'], $response->status());
-            }
-        } catch (\Exception $e) {
-            return response()->json(['error' => 'Exception: ' . $e->getMessage()], 500);
-        }
-    }
 }
