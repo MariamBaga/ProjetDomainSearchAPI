@@ -14,16 +14,11 @@ Route::post('/register', [DomaineController::class, 'register'])->name('domains.
 
 
  // Route pour renouveler un domaine
- Route::POST('/renew', [DomaineController::class, 'renew']);
+ Route::get('/renew', [DomaineController::class, 'renew']);
 
  // Route pour transférer un domaine
  Route::post('/transfer', [DomaineController::class, 'transfer']);
 
- // Liste des transferts
-Route::get('/transfers', [DomaineController::class, 'listTransfers'])->name('domains.transfers.list');
-
-// Annulation d'un transfert
-Route::post('/transfer/cancel', [DomaineController::class, 'cancelTransfer'])->name('domains.transfer.cancel');
 
 
 Route::middleware([
