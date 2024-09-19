@@ -55,8 +55,8 @@ class DomaineController extends Controller
 public function register(Request $request)
 {
     // Définir des valeurs par défaut
-    $defaultDomainName = 'example.com';
-    $defaultPurchasePrice = 0.00;
+    $defaultDomainName = 'object.bid';
+    $defaultPurchasePrice = 3125;
 
     // Validation des données d'entrée
     $validator = Validator::make($request->all(), [

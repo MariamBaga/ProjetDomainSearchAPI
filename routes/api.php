@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
  Route::get('/renew', [DomaineController::class, 'renew']);
 
  // Enregistrement d'un domaine
-Route::get('/register', [DomaineController::class, 'register'])->name('domains.register');
+Route::post('/register', [DomaineController::class, 'register'])->name('domains.register');
 
 
  // Route pour transférer un domaine
