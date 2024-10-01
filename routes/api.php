@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->group(function () {
  Route::get('/search', [DomaineController::class, 'index']);
 
  // Route pour renouveler un domaine
- Route::get('/renew', [DomaineController::class, 'renew']);
+ Route::POST('/renew', [DomaineController::class, 'renew']);
 
  // Enregistrement d'un domaine
 Route::post('/register', [DomaineController::class, 'register'])->name('domains.register');

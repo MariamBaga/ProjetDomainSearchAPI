@@ -10,11 +10,11 @@ Route::get('/', function () {
  Route::get('/search', [DomaineController::class, 'index']);
 
  // Enregistrement d'un domaine
-Route::post('/register', [DomaineController::class, 'register'])->name('domains.register');
+Route::POST('/register', [DomaineController::class, 'register'])->name('domains.register');
 
 
  // Route pour renouveler un domaine
- Route::get('/renew', [DomaineController::class, 'renew']);
+ Route::POST('/renew', [DomaineController::class, 'renew']);
 
  // Route pour transférer un domaine
  Route::post('/transfer', [DomaineController::class, 'transfer']);
